@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <SCRIPT>
+        function loadDoc() {
+            // var xhttp = new XMLHttpRequest();
+            // xhttp.onreadystatechange = function() {
+            //   if (this.readyState == 4 && this.status == 200) {
+            //     document.getElementById("demo").innerHTML =
+            //     this.responseText;
+            //   }
+            // };
+            // xhttp.open("GET", "https://jsonplaceholder.typicode.com/users", true);
+            // xhttp.send();
+          
+        fetch("https://jsonplaceholder.typicode.com/users")
+        .then(response => response.json())
+        .then((json) => {
+            console.log(json);
+            console.log(json[0].address.city);
+            //document.getElementById("demo").innerHTML = JSON.stringfy(json);
+        })     
+    }
+    </SCRIPT>
+</head>
+<body>
+    <div id="demo"></div>
+    <input type="button" value="가져오기" onclick="loadDoc()">
+</body>
+</html>
